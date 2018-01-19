@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>韵宝宝操作指导</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="main.css">
+    <script>
+        window.onload = function () {
+            var steps = document.getElementsByClassName("steps");
+            for(var i=0;i<steps.length-1;i++){
+                var btn = steps[i].getElementsByTagName("button")[0];
+                btn.onclick = function () {
+                    var n = parseInt(this.parentNode.id.substring(5,7));
+                    steps[n-9].style.display = "none";
+                    steps[n-8].style.display = "block";}}}
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="steps" id="step_9">
+            <img src="images/bg_start_up9@2x.png">
+            <button class="view_next"></button>
+        </div>
+        <div class="steps" id="step_10">
+            <img src="images/bg_start_up10@2x.png">
+            <button class="view_next"></button>
+        </div>
+        <div class="steps" id="step_11">
+            <img src="images/bg_start_up11@2x.png">
+            <button class="view_next"></button>
+        </div>
+        <div class="steps" id="step_12">
+            <img src="images/bg_start_up12@2x.png">
+            <a href="index_4.html" class="view_next"></a>
+        </div>
+    </div>
+</body>
+</html>

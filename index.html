@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>韵宝宝操作指导</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="container">
+    <div class="steps" id="step_1">
+        <img src="images/bg_start_up@2x.png">
+        <button id="start"></button>
+    </div>
+    <div class="steps" id="step_2">
+        <img src="sub_img/bg_start_up2@2x.png">
+        <button class="view_next"></button>
+    </div>
+    <div class="steps" id="step_3">
+        <img src="sub_img/bg_start_up3@2x.png">
+        <button class="view_next"></button>
+    </div>
+    <div class="steps" id="step_4">
+        <img src="sub_img/bg_start_up4@2x.png">
+        <button class="view_next"></button>
+    </div>
+    <div class="steps" id="step_5">
+        <img src="sub_img/bg_start_up5@2x.png">
+        <button class="view_next"></button>
+    </div>
+    <div class="steps" id="step_6">
+        <img src="sub_img/bg_start_up6@2x.png">
+        <button class="view_next"></button>
+    </div>
+    <div class="steps" id="step_7">
+        <img src="sub_img/bg_start_up7@2x.png">
+        <button class="view_next"></button>
+    </div>
+    <div class="steps" id="step_8">
+        <img src="sub_img/bg_start_up8@2x.png">
+        <button class="view_next"></button>
+    </div>
+    <div class="steps" id="step_9">
+        <img src="sub_img/bg_start_up9@2x.png">
+        <button class="view_next"></button>
+    </div>
+    <div class="steps" id="step_10">
+        <img src="sub_img/bg_start_up10@2x.png">
+        <button class="view_next"></button>
+    </div>
+    <div class="steps" id="step_11">
+        <img src="sub_img/bg_start_up11@2x.png">
+        <button class="view_next"></button>
+    </div>
+    <div class="steps" id="step_12">
+        <img src="sub_img/bg_start_up12@2x.png">
+        <button class="view_next"></button>
+    </div>
+    <div class="steps" id="step_13">
+        <img src="sub_img/bg_start_up13@2x.png">
+        <button class="view_next"></button>
+    </div>
+    <div class="steps" id="step_14">
+        <img src="sub_img/bg_start_up14@2x.png">
+        <button id="view_again"></button>
+        <button id="view_over"></button>
+    </div>
+    <div id="sand_box" style=" display: none; "></div>
+</div>
+</body>
+<script>
+    window.onload = function () {
+        set_step_5_h();
+        view_next();
+        setTimeout(pic_load,2000);
+        set_steps_h(document.getElementById("step_1"));
+    };
+//    steps_5 设置按钮高度
+    function set_step_5_h() {
+        var btn = document.getElementById("step_5").getElementsByTagName("button")[0];
+        btn.style.height = btn.offsetWidth + 'px';
+    }
+//    点击进入下一步
+    function view_next() {
+        var steps = document.getElementsByClassName("steps");
+        var len = steps.length;
+
+        for(var i=0;i<len;i++){
+            var btn = steps[i].getElementsByTagName("button")[0];
+            btn.onclick = function () {
+                var n = parseInt(this.parentNode.id.substring(5,7));
+                steps[n-1].style.display = "none";
+                if(n === 14 && this.id === 'view_again'){
+                    steps[0].style.display = "block";
+                }else{
+                    steps[n].style.display = "block";
+
+                }
+            }
+        }
+    }
+
+    function set_steps_h(step) {
+        var step_h = step.getElementsByTagName("img")[0].offsetHeight;
+        step.style.height = step_h + "px";
+        console.log(step_h);
+    }
+
+//    图片懒加载
+    function pic_load() {
+        var imgs = document.getElementsByTagName("img");
+        var len = imgs.length;
+        var sand_box = document.getElementById("sand_box");
+
+
+        for(var i=1;i<len;i++){
+            var source = "images/bg_start_up" + (i+1) + "@2x.png";
+            var img = new Image();
+            img.src = source;
+            sand_box.appendChild(img);
+            img.onload = imgs[i].setAttribute("src",source)
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,23 @@
+*{  margin: 0;  padding: 0;}
+img{  width: 100%;  height: auto; }
+.steps{  width: 100%;  display: none;  position: relative; }
+.steps img{ width: 100%;  z-index: -1;  top: 0; }
+.steps button{  display: block;  margin: 0 auto;  border: none;  outline: none;  position: absolute;  width: 70%;  height: 7%;  background: rgba(0,0,0,0); }
+#step_1{    display:block;  }
+#step_5{  display: block; z-index: -1;  position: absolute;  top: 0;  }
+#step_1 button,#step_2 button,#step_3 button,#step_4 button,#step_6 button,#step_7 button{  bottom: 9.5%;  left: 14%;  }
+#step_1 button{  background: url("images/button_start_nor@2x.png")no-repeat;  background-size: 100% auto;  }
+#step_2 button{  background: url("images/button_next_pre@2x.png")no-repeat;  background-size: 100% auto;  }
+#step_3 button{  background: url("images/button_next_pre2@2x.png")no-repeat;  background-size: 100% auto;  }
+#step_4 button{  background: url("images/button_next_nor@2x.png")no-repeat;  background-size: 100% auto;  }
+#step_5 button{  width: 50%;  border-radius: 50%;  position: absolute;  left: 25%;  right: 25%;  top: 20%;  background: rgba(0,0,0,0);  height: 250px;}
+#step_6 button{  background: url("images/button_next_nor@2x.png")no-repeat;  background-size: 100% auto;  }
+#step_7 button{  background: url("images/button_next_pre2@2x.png")no-repeat;  background-size: 100% auto;  }
+#step_8 button,#step_9 button{  bottom: 0;  height: 8.2%;width: 100%;  }
+#step_10 button{  width: 92%;  top: 72.65%; left: 4%;  }
+#step_11 button{  width: 33%;  top: 52%; left: 18%;  }
+#step_12 button{  background: url("images/button_next_nor@2x.png")no-repeat;  background-size: 100% auto;  bottom: 23.5%;  left: 14%;  }
+#step_13 button{  width: 96%;  position: absolute;  top: 36.9%; left: 2%;  height: 13.5%; }
+#step_14 button,#step_14 button{  width: 41%;  height: 5.6%;  top: 9.5%;  }
+#step_14 #view_again{  background: url("images/btn_return_nor@2x.png")no-repeat;  background-size: 100% auto;  left: 6.25%;  }
+#step_14 #view_over{  background: url("images/btn_enter_nor@2x.png")no-repeat;  background-size: 100% auto;  right: 6.25%;  }

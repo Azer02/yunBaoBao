@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>韵宝宝操作指导</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="main.css">
+    <script>
+        window.onload = function () {
+            var s_13 = document.getElementById("step_13");
+            var s_14 = document.getElementById("step_14");
+            var vn = s_13.getElementsByTagName("button")[0];
+            vn.onclick = function () {
+                s_13.style.display = "none";
+                s_14.style.display = "block";}}
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="steps" id="step_13">
+            <img src="images/bg_start_up13@2x.png">
+            <button class="view_next"></button>
+        </div>
+        <div class="steps" id="step_14">
+            <img src="images/bg_start_up14@2x.png">
+            <a href="index_1.html" id="view_again"></a>
+            <button id="view_over"></button>
+        </div>
+    </div>
+</body>
+</html>
